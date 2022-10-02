@@ -14,7 +14,7 @@ import HomeScreen from "./Components/HomeScreen";
 
 const Tab = createBottomTabNavigator()
 
-
+//databasen hentes
 export default function App() {
     const firebaseConfig = {
         apiKey: "AIzaSyB5I8iY3oYslpxVBVxZCTBJkOwSmVpT2g8",
@@ -30,6 +30,8 @@ export default function App() {
         firebase.initializeApp(firebaseConfig);
     }
 
+    //Oprettelse af tab-navigatoren som styrer navigationen mellem de forskellige views som ses i bunden af appen.
+    //Til sidst angives de komponenter som skal vises i hver tab og tildeles et navn som også vises.
   return (
       <NavigationContainer style={styles.container}>
         <Tab.Navigator  screenOptions={({ route }) => ({
@@ -39,6 +41,7 @@ export default function App() {
             tabBarStyle: {
                 backgroundColor: '#E2D2FD',
 
+                //Hver tab bliver her tildelt et ikon
             },
             tabBarIcon: ({ color, size }) => {
                 if (route.name === 'Home') {

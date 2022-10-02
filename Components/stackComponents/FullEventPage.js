@@ -1,9 +1,9 @@
-import {Button, Image, Text, View, StyleSheet, ScrollView} from 'react-native';
+import {Button, Image, View, StyleSheet, ScrollView} from 'react-native';
 import * as React from "react";
 
 
 
-//Husk at ændre navn
+//FullEventpage komponenten oprettes i et scrollview med en knap der går tilbage og et billede
 function FullEventPage({navigation}) {
     return (
         <ScrollView style={styles.root}>
@@ -15,13 +15,12 @@ function FullEventPage({navigation}) {
     );
 }
 
-
+//Lokal styling
 const styles = StyleSheet.create({
     root: {
         paddingTop: 40,
         paddingLeft: 20,
         paddingRight: 20,
-       // backgroundColor: "#E2D2FD",
         backgroundColor: "#FFFFFF",
         paddingBottom: 5
     },

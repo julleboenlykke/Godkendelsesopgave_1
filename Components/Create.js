@@ -9,6 +9,7 @@ const Create = ({navigation,route}) => {
     const initialState = { eventName: '', location: '', time: '', eventType: '' }
     const [newEvent,setNewEvent] = useState(initialState);
 
+    //
     const isEditEvent = route.name === "Edit event";
 
     useEffect(() => {
@@ -17,6 +18,7 @@ const Create = ({navigation,route}) => {
             setNewEvent(event)
         }
 
+        //Fjern
         return () => {
             setNewEvent(initialState)
         };
@@ -40,9 +42,9 @@ const Create = ({navigation,route}) => {
                 firebase
                     .database()
                     .ref(`/Event/${id}`)
-
+                    //Update bruges til at opdatere de felter som bliver ændret
                     .update({ eventName, location, time, eventType });
-                // Når bilen er ændret, går vi tilbage.
+                // Når eventen er ændret, fåes der en besked om at den er oprettet
                 Alert.alert("Din info er nu opdateret");
                 const event = [id,newEvent]
                 navigation.navigate("Event Details",{event});
@@ -66,6 +68,7 @@ const Create = ({navigation,route}) => {
 
     };
 
+    //Scrollview med det tekstfelt og indputfelter
     return (
         <ScrollView style={{ backgroundColor: "#FFFFFF",}}>
             <View>
@@ -106,6 +109,7 @@ const Create = ({navigation,route}) => {
 
 export default Create;
 
+//Lokal styling
 const styles = StyleSheet.create({
     container: {
         flex: 1,

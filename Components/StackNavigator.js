@@ -5,9 +5,10 @@ import HomeScreen from "./HomeScreen";
 import FullEventPage from "./stackComponents/FullEventPage";
 import Create from "./Create";
 
-
+//Oprettes en Stacknavigator
 const Stack = createStackNavigator();
 
+//i return angives der screens som skal bruges med en stacknavigator. Disse er HomeScreen, FullEventPage og Create.
 function StackNavigator() {
     return (
         <Stack.Navigator screenOptions={{headerShown: false}}>

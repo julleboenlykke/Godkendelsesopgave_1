@@ -2,11 +2,12 @@ import {StyleSheet, Text, View, Image, TouchableOpacity, ScrollView} from "react
 import * as React from "react";
 import FullEventPage from "./stackComponents/FullEventPage";
 
+//oprettelse af en navigation control
 const navController = (navigation, route) => {
     navigation.navigate(route)
 }
 
-
+//HomeScrren komponenten oprettes i et scrollview som indholder text, billeder og en TouchableOpacity som fungerer som en knap og navigerer til FullEventPage
 function HomeScreen ({navigation}) {
     return (
         <ScrollView style={styles.root}>
@@ -45,11 +46,11 @@ function HomeScreen ({navigation}) {
     )
 }
 
+//Lokal styling
 const styles = StyleSheet.create({
     root: {
         paddingLeft: 10,
         paddingRight:10,
-       // backgroundColor: "#E2D2FD",
         backgroundColor: "#FFFFFF",
     },
     text: {

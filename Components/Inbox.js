@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View, Image, ScrollView} from "react-native"
 import * as React from "react"
 
-
+//Inbox komponenten oprettes i et scrollview med tekst og et billede
 function Inbox () {
     return (
         <ScrollView style={styles.root}>
@@ -22,12 +22,11 @@ function Inbox () {
     )
 }
 
+//Lokal styling
 const styles = StyleSheet.create({
     root: {
-        //paddingTop: 60,
         paddingLeft: 10,
         paddingRight:10,
-       // backgroundColor: "#E2D2FD",
         backgroundColor: "#FFFFFF",
     },
     text: {

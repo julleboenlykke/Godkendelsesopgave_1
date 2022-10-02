@@ -1,7 +1,7 @@
-import {StyleSheet, Text, View, Image, ScrollView} from "react-native"
+import {StyleSheet, Text, View, ScrollView} from "react-native"
 import * as React from "react"
 
-
+//Profile komponenten oprettes i et scrollview med tekst
 function Profile () {
     return (
         <ScrollView style={styles.root}>
@@ -24,12 +24,11 @@ function Profile () {
     )
 }
 
+//Lokal styling
 const styles = StyleSheet.create({
     root: {
-        //paddingTop: 60,
         paddingLeft: 10,
         paddingRight:10,
-       // backgroundColor: "#E2D2FD",
         backgroundColor: "#FFFFFF",
     },
     text: {

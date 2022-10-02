@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, Text, FlatList, TouchableOpacity, StyleSheet, ScrollView, Button, Image,} from 'react-native';
+import {View, Text, FlatList, TouchableOpacity, StyleSheet, ScrollView,} from 'react-native';
 import firebase from 'firebase/compat';
 import {useEffect, useState} from "react";
 import Ionicons from "react-native-vector-icons/Ionicons";
@@ -25,6 +25,7 @@ const Events = ({navigation}) => {
         }
     },[]);
 
+    //Hvis der ingen events vises der kun en tekst og en knap til at oprette nye events.
     if (!Events) {
         return(
         <ScrollView style={{ backgroundColor: "#FFFFFF",}}>
@@ -54,7 +55,7 @@ const Events = ({navigation}) => {
         )
     }
     
-
+//Søger i arrayet af events og finder det event som matcher id´et som bliver sendt.
     const handleSelectEvents = id => {
         const events = Object.entries(Events).find( events => events[0] === id /*id*/)
         navigation.navigate('Events Details', { events });
@@ -89,14 +90,13 @@ const Events = ({navigation}) => {
             </TouchableOpacity>
         <FlatList
             data={eventsArray}
-
+            //eventsKeys bruges til af finde ID på en specifik event og returnerer det som key
             keyExtractor={(item, index) => eventsKeys[index]}
             renderItem={({ item, index }) => {
                 return(
                     <TouchableOpacity onPress={() => handleSelectEvents(eventsKeys[index])}>
-
                         <Text style={styles.container}>
-                            {item.eventName} {item.location}
+                            {item.eventName}, {item.location}, {item.time}
                         </Text>
 
                     </TouchableOpacity>
